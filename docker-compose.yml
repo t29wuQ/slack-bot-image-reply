@@ -1,0 +1,12 @@
+version: '2'
+services:
+  bot:
+    build: ./nodejs
+    container_name: slack-bot-image-reply
+    restart: always
+    working_dir: "/src"
+    ports:
+      - "8081:3000"
+    volumes:
+      - "./bot:/src"
+    tty: true
